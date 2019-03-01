@@ -3,5 +3,5 @@ memorization help programs
 
 javascripts
 
-eu lande, find det tilfældige land /n
+eu lande, find det tilfældige land\n
 mix, forskellige datoer og land => hovedskader

@@ -1,7 +1,7 @@
 # memorization
-memorization help programs
+Memorization help programs
 
-javascripts
+Javascripts
 
-eu lande, find det tilfældige land
-mix, forskellige datoer og land => hovedskader
+eu lande.html     :        find det tilfÃ¦ldige land  
+mix.html          :        forskellige datoer og land => hovedskader

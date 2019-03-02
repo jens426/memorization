@@ -6,13 +6,32 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script>
 		var countryClicked = "";
-		var allContries = ["danmark","tyskland","Polen","Tjekiet","Østrig","italien","holland","belgien","frankrig","Schweich","spanien","portugal","slovakiet","ungarn","slovenien","rumænien","sverige","norge","england","skotland","irland","fæøerne","island","tjekiet","bulgarien","grækenland","albanien","makedonien","kosovo","serbien","bosnien","kroatien","ukraine","hviderusland","rusland","estland","letland","litauen","finland"];
-
+		var allContries = ["danmark","tyskland","polen","tyrkiet","østrig","italien","holland","belgien","frankrig","schweich","spanien","portugal","slovakiet","ungarn","slovenien","rumænien","sverige","norge","england","skotland","irland","fæøerne","island","tjekiet","bulgarien","grækenland","albanien","makedonien","kosovo","serbien","bosnien","kroatien","ukraine","hviderusland","rusland","estland","letland","litauen","finland"];
+		var CountryNumberInArray = 0;
+		var once = true;
+		
 		function setCountry(country) {
 			countryClicked = country;
 
 			if (countryClicked == $('#pres').text()) {
-				$('#pres').text(allContries[Math.floor(Math.random() * allContries.length)]);
+				var temp = 0;
+				once = true;
+				
+				//reduce chane of getting the same country again a little
+				temp = Math.floor(Math.random() * allContries.length);
+				if (temp == CountryNumberInArray) {
+					CountryNumberInArray = Math.floor(Math.random() * allContries.length);
+				} else {
+					CountryNumberInArray = temp;
+				}
+				$('#pres').text(allContries[CountryNumberInArray]);
+			} else {
+			// if guess wrong increas chance of getting the country again
+				if (once) {
+					allContries.push(countryClicked);
+					alert("dd");
+					once = false;
+					}
 			}
 			 
 			 //alert(countryClicked);
@@ -33,14 +52,14 @@
 	<map name="image-map">
 		<area target="" alt="" title="" href="javascript:setCountry('danmark');" coords="202,251,208,277,218,312,160,315,151,259" shape="poly">
 		<area target="" alt="" title="" href="javascript:setCountry('tyskland');" coords="179,327,166,399,180,419,173,441,200,449,214,445,218,436,225,427,212,398,230,381,226,333,204,321,191,319" shape="poly">
-		<area target="" alt="" title="" href="javascript:setCountry('Polen');" coords="230,333,230,380,260,410,288,408,301,381,293,344,291,317,266,317,254,310" shape="poly">
-		<area target="" alt="" title="" href="javascript:setCountry('Tjekiet');" coords="230,384,216,397,226,427,248,423,259,413" shape="poly">
-		<area target="" alt="" title="" href="javascript:setCountry('Østrig');" coords="247,426,249,447,242,459,220,467,212,459,197,459,194,453,217,443,224,431" shape="poly">
+		<area target="" alt="" title="" href="javascript:setCountry('polen');" coords="230,333,230,380,260,410,288,408,301,381,293,344,291,317,266,317,254,310" shape="poly">
+		<area target="" alt="" title="" href="javascript:setCountry('tjekiet');" coords="230,384,216,397,226,427,248,423,259,413" shape="poly">
+		<area target="" alt="" title="" href="javascript:setCountry('østrig');" coords="247,426,249,447,242,459,220,467,212,459,197,459,194,453,217,443,224,431" shape="poly">
 		<area target="" alt="" title="" href="javascript:setCountry('italien');" coords="222,470,214,489,224,524,248,551,268,586,256,609,247,629,230,578,206,558,192,531,185,508,168,479,188,468,201,460" shape="poly">
 		<area target="" alt="" title="" href="javascript:setCountry('holland');" coords="173,331,152,349,150,368,167,378,174,349" shape="poly">
 		<area target="" alt="" title="" href="javascript:setCountry('belgien');" coords="149,371,140,375,148,392,168,409,164,394,164,381" shape="poly">
 		<area target="" alt="" title="" href="javascript:setCountry('frankrig');" coords="135,377,78,408,89,509,130,536,141,519,163,525,176,499,160,468,170,439,174,415" shape="poly">
-		<area target="" alt="" title="" href="javascript:setCountry('Schweich');" coords="191,447,193,462,169,475,162,463,171,445" shape="poly">
+		<area target="" alt="" title="" href="javascript:setCountry('schweich');" coords="191,447,193,462,169,475,162,463,171,445" shape="poly">
 		<area target="" alt="" title="" href="javascript:setCountry('spanien');" coords="84,503,36,483,26,499,44,521,29,600,46,629,79,626,100,603,128,548,131,537" shape="poly">
 		<area target="" alt="" title="" href="javascript:setCountry('portugal');" coords="29,510,8,602,28,606,40,522" shape="poly">
 		<area target="" alt="" title="" href="javascript:setCountry('slovakiet');" coords="288,410,287,425,256,439,248,427,261,413" shape="poly">
@@ -54,7 +73,7 @@
 		<area target="" alt="" title="" href="javascript:setCountry('irland');" coords="86,273,78,329,49,338,58,275" shape="poly">
 		<area target="" alt="" title="" href="javascript:setCountry('fæøerne');" coords="102,143,99,167,130,160,129,139" shape="poly">
 		<area target="" alt="" title="" href="javascript:setCountry('island');" coords="17,37,21,120,115,97,113,25" shape="poly">
-		<area target="" alt="" title="" href="javascript:setCountry('Tyrkiet');" coords="472,483,361,542,339,577,379,629,444,599,492,572,504,502" shape="poly">
+		<area target="" alt="" title="" href="javascript:setCountry('tyrkiet');" coords="472,483,361,542,339,577,379,629,444,599,492,572,504,502" shape="poly">
 		<area target="" alt="" title="" href="javascript:setCountry('bulgarien');" coords="348,505,305,510,306,546,336,547,347,521" shape="poly">
 		<area target="" alt="" title="" href="javascript:setCountry('grækenland');" coords="336,553,323,623,298,638,286,605,293,570" shape="poly">
 		<area target="" alt="" title="" href="javascript:setCountry('albanien');" coords="275,549,281,541,284,556,288,566,284,593,275,571" shape="poly">
